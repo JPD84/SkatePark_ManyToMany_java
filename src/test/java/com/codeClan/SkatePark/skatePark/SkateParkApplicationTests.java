@@ -34,6 +34,8 @@ public class SkateParkApplicationTests {
 		skaterRepository.save(skater);
 		Competition competition = new Competition("Volcom Professional Vert Comp", "Professional Vert");
 		competitionRepository.save(competition);
+		skater.addCompetition(competition);
+		skaterRepository.save(skater);
 
 	}
 
