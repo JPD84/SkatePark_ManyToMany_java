@@ -40,7 +40,6 @@ public class Competition {
             }
 
     )
-
     private List<Skater> skaters;
 
     public Competition( String name, String type) {
@@ -74,6 +73,14 @@ public class Competition {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public List<Skater> getSkaters() {
+        return skaters;
+    }
+
+    public void setSkaters(List<Skater> skaters) {
+        this.skaters = skaters;
     }
 
     public void addSkater(Skater skater){

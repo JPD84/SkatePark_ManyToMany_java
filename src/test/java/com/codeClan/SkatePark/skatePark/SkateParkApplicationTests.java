@@ -28,6 +28,12 @@ public class SkateParkApplicationTests {
 
 	@Test
 	public void contextLoads() {
+
+
+	}
+
+	@Test
+	public void canSetupSkaterCompetitionPark(){
 		SkatePark skatePark = new SkatePark("Birdhouse SkatePark", "Professional Skatepark");
 		skateparkRepository.save(skatePark);
 		Skater skater = new Skater("Tony", "Hawk", 35, "Professional Vert Skater", skatePark);
@@ -36,7 +42,6 @@ public class SkateParkApplicationTests {
 		competitionRepository.save(competition);
 		skater.addCompetition(competition);
 		skaterRepository.save(skater);
-
 	}
 
 }

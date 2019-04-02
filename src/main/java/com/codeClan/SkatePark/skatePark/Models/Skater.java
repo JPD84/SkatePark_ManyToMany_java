@@ -43,12 +43,10 @@ public class Skater {
                     updatable = false)
             }
     )
-
     private List<Competition> competitions;
 
     @ManyToOne
     @JoinColumn(name = "skatePark_id", nullable = false)
-
     private SkatePark skatePark;
 
     public Skater(String firstName, String lastName, int age, String level, SkatePark skatepark) {
@@ -101,6 +99,14 @@ public class Skater {
 
     public void setLevel(String level) {
         this.level = level;
+    }
+
+    public List<Competition> getCompetitions() {
+        return competitions;
+    }
+
+    public void setCompetitions(List<Competition> competitions) {
+        this.competitions = competitions;
     }
 
     public void addCompetition(Competition competition){

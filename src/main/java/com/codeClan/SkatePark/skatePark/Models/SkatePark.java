@@ -8,7 +8,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "skateParks")
-
 public class SkatePark {
 
     @Id
@@ -56,5 +55,13 @@ public class SkatePark {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public List<Skater> getSkaters() {
+        return skaters;
+    }
+
+    public void setSkaters(List<Skater> skaters) {
+        this.skaters = skaters;
     }
 }
