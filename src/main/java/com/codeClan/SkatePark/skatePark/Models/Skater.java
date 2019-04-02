@@ -2,6 +2,7 @@ package com.codeClan.SkatePark.skatePark.Models;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -45,11 +46,21 @@ public class Skater {
 
     private List<Competition> competitions;
 
-    public Skater(String firstName, String lastName, int age, String level) {
+    @ManyToOne
+    @JoinColumn(name = "skatePark_id", nullable = false)
+
+    private SkatePark skatePark;
+
+    public Skater(String firstName, String lastName, int age, String level, SkatePark skatepark) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.level = level;
+        this.skatePark = skatepark;
+        this.competitions = new ArrayList<Competition>();
+    }
+
+    public Skater() {
     }
 
     public Long getId() {
@@ -90,5 +101,9 @@ public class Skater {
 
     public void setLevel(String level) {
         this.level = level;
+    }
+
+    public void addCompetition(Competition competition){
+        this.competitions.add(competition);
     }
 }

@@ -3,6 +3,7 @@ package com.codeClan.SkatePark.skatePark.Models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -45,6 +46,7 @@ public class Competition {
     public Competition( String name, String type) {
         this.name = name;
         this.type = type;
+        this.skaters = new ArrayList<Skater>();
     }
 
     public Competition() {
@@ -72,5 +74,9 @@ public class Competition {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public void addSkater(Skater skater){
+        this.skaters.add(skater);
     }
 }

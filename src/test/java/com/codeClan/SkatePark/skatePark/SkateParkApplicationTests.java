@@ -30,7 +30,7 @@ public class SkateParkApplicationTests {
 	public void contextLoads() {
 		SkatePark skatePark = new SkatePark("Birdhouse SkatePark", "Professional Skatepark");
 		skateparkRepository.save(skatePark);
-		Skater skater = new Skater("Tony", "Hawk", 35, "Professional Vert Skater");
+		Skater skater = new Skater("Tony", "Hawk", 35, "Professional Vert Skater", skatePark);
 		skaterRepository.save(skater);
 		Competition competition = new Competition("Volcom Professional Vert Comp", "Professional Vert");
 		competitionRepository.save(competition);
